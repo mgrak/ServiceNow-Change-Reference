@@ -1,12 +1,12 @@
-var targetTable = 'cmdb_ci';
+var refTable = 'cmdb_ci';
 var whiteList = ['task'];
 var sourceSysID = 'dd412bfe4f448680dedeeb1e0210c7d1';
 var newReference = 'ce30a8af1b878dd46825ca262a4bcb0e';
 var grDict = new GlideRecord('sys_dictionary');
-grDict.addQuery('reference', targetTable);
+grDict.addQuery('reference', refTable);
 grDict.addQuery('internal_type', 'reference');
 grDict.query();
-gs.info(grDict.getRowCount() + ' ' + targetTable + ' dictionary references found');
+gs.info(grDict.getRowCount() + ' ' + refTable + ' dictionary references found');
 while (grDict.next()) {
   	var num = 0;
     var pass = false;
